@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import MainApp from "./11-useContext/MainApp";
 // import CallbackHook from "./08-useCallback/CallbackHook";
 // import { Padre } from "./09-tarea-memo/Padre";
 // import Memorize from "./06-Memo/Memorize";
@@ -16,10 +17,13 @@ import "./index.css";
 ////////////////////////////////////////////////////////////////////////////////
 
 // import "./10-useReducer/intro-reducer";
-import TodoApp from "./10-useReducer/TodoApp";
+// import TodoApp from "./10-useReducer/TodoApp";
+import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <TodoApp />
+    <BrowserRouter>
+      <MainApp />
+    </BrowserRouter>
   </StrictMode>
 );
