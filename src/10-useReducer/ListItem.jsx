@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 const ListItem = ({ todo, onDeleteTodo, onToggleTodo }) => {
   const { id, description, done } = todo;
 
-  const badgeClass = done ? "badge bg-success" : "badge bg-warning";
-
   return (
     <li key={id} className="list-group-item" onDoubleClick={() => onToggleTodo(id)}>
       <div className="row col d-flex justify-content-end">
@@ -15,16 +13,11 @@ const ListItem = ({ todo, onDeleteTodo, onToggleTodo }) => {
       </div>
       <div className="row col">
         <div className="col-sm-12 col-md-6">
-          <span
-            className="align-self-center text-break"
+          <h4
+            className={`align-self-center text-break ${done ? "text-decoration-line-through" : ""}`}
           >
             {description}
-          </span>
-        </div>
-        <div className="col-sm-12 col-md-6">
-          <span className={badgeClass}>
-            {done ? "Realizada" : "Pendiente"}
-          </span>
+          </h4>
         </div>
       </div>
     </li>
