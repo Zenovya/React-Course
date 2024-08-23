@@ -3,11 +3,12 @@ import HomePage from "./HomePage";
 import LoginPage from "./LoginPage";
 import AboutPage from "./AboutPage";
 import NavBar from "./NavBar";
+import UserProvider from "./context/UserProvider";
 
 const MainApp = () => {
   return (
-    <>
-      <h1>MainApp</h1>
+    <UserProvider>
+      {/* <h1>MainApp</h1> */}
 
       {/* <a href="/">Home</a>
     <br />
@@ -18,7 +19,7 @@ const MainApp = () => {
       <NavBar />
 
       <hr />
-
+      
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="login" element={<LoginPage />} />
@@ -27,7 +28,7 @@ const MainApp = () => {
         {/* <Route path="*" element={<h1>404 Not Found</h1>} /> */}
         <Route path="*" element={<Navigate to="/about" />} />
       </Routes>
-    </>
+    </UserProvider>
   );
 };
 
